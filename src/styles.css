@@ -79,6 +79,7 @@
   font-family: var(--font-serif);
   font-weight: 500;
   line-height: 0.92;
+  letter-spacing: -0.01em;
 }
 
 /* Marathi script needs a little more room and slightly smaller display type */
@@ -110,10 +111,12 @@ html[lang="mr"] .text-center h3.font-serif {
 }
 
 @utility glass-panel {
-  background: color-mix(in oklab, var(--panel-raised) 84%, transparent);
-  border: 1px solid var(--border);
-  box-shadow: 0 24px 70px color-mix(in oklab, var(--primary) 10%, transparent);
-  backdrop-filter: blur(18px);
+  background: color-mix(in oklab, var(--panel-raised) 78%, transparent);
+  border: 1px solid color-mix(in oklab, #ffffff 40%, color-mix(in oklab, var(--secondary) 22%, transparent));
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, #ffffff 55%, transparent),
+    0 24px 70px color-mix(in oklab, var(--primary) 14%, transparent);
+  backdrop-filter: blur(22px) saturate(140%);
 }
 
 @utility fine-grid {
@@ -130,4 +133,46 @@ html[lang="mr"] .text-center h3.font-serif {
 
 @media (prefers-reduced-motion: no-preference) {
   .float-soft { animation: float-soft 5s ease-in-out infinite; }
+}
+
+/* Liquid-glass card: frosted surface, layered shadows, gentle hover lift */
+@utility glass-card {
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--panel-raised) 62%, transparent),
+    color-mix(in oklab, var(--panel) 38%, transparent)
+  );
+  border: 1px solid color-mix(in oklab, #ffffff 42%, color-mix(in oklab, var(--secondary) 20%, transparent));
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, #ffffff 60%, transparent),
+    inset 0 -1px 0 color-mix(in oklab, var(--secondary) 12%, transparent),
+    0 24px 48px -20px color-mix(in oklab, var(--primary) 24%, transparent),
+    0 8px 20px -10px color-mix(in oklab, var(--secondary) 20%, transparent);
+  backdrop-filter: blur(16px) saturate(135%);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      inset 0 1px 0 color-mix(in oklab, #ffffff 65%, transparent),
+      0 34px 64px -22px color-mix(in oklab, var(--primary) 30%, transparent),
+      0 0 0 1px color-mix(in oklab, var(--secondary) 28%, transparent);
+  }
+}
+
+/* Soft sage ambient blobs that drift slowly behind the glass surfaces */
+@utility ambient-blob {
+  border-radius: 9999px;
+  filter: blur(90px);
+}
+
+@keyframes blob-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(0, -26px, 0) scale(1.06); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ambient-blob { animation: blob-drift 16s ease-in-out infinite; }
+  .ambient-blob:nth-child(2) { animation-delay: -5s; }
+  .ambient-blob:nth-child(3) { animation-delay: -10s; }
 }

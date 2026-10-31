@@ -40,6 +40,11 @@ function Shell({ children }: { children: ReactNode }) {
   const { t } = useLang();
   return (
     <div className="min-h-screen overflow-hidden bg-background">
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        <div className="ambient-blob absolute -top-40 -left-32 size-[36rem] bg-secondary/20" />
+        <div className="ambient-blob absolute top-[35%] -right-48 size-[42rem] bg-accent/25" />
+        <div className="ambient-blob absolute bottom-[-10rem] left-1/3 size-[32rem] bg-primary/10" />
+      </div>
       <header className="fixed inset-x-0 top-4 z-50 px-4">
         <div className="glass-panel mx-auto flex h-16 max-w-6xl items-center justify-between rounded-full px-4 sm:px-5">
           <Link to="/" aria-label="Haripriyaa Netralaya home"><Brand /></Link>
