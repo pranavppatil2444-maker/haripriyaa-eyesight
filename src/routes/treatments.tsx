@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, Clock3, Stethoscope } from "lucide-react";
-import heroImage from "@/assets/doctor-consultation.jpg";
+import { DOCTOR_IMAGE } from "@/lib/images";
 import { PageHero } from "@/components/page-hero";
 import { useLang } from "@/lib/i18n";
 
@@ -24,6 +24,7 @@ export const Route = createFileRoute("/treatments")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: DOCTOR_IMAGE }, { name: "twitter:image", content: DOCTOR_IMAGE },
     ],
   }),
   component: TreatmentsPage,
@@ -111,7 +112,7 @@ function TreatmentsPage() {
         eyebrow={t("Treatments & services")}
         title={t("Precision care for every stage of vision.")}
         description={t("Understand your symptoms, your options and your path to recovery with Dr. Neeta Ramesh Patil—without medical jargon.")}
-        image={heroImage}
+        image={DOCTOR_IMAGE}
       />
 
       <section className="py-24">
@@ -119,7 +120,7 @@ function TreatmentsPage() {
           {services.map((service, index) => (
             <article
               key={service.titleEn}
-              className="rounded-lg border border-border bg-card p-6 sm:p-9"
+              className="glass-card rounded-lg p-6 sm:p-9"
             >
               <div className="grid gap-8 lg:grid-cols-[.8fr_1fr_1fr]">
                 <div>
