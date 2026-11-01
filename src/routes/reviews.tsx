@@ -39,7 +39,7 @@ function ReviewsPage() {
       <section className="py-24">
         <div className="page-shell grid gap-5 md:grid-cols-2">
           {reviews.map(([name, locality, quote]) => (
-            <article key={name} className="rounded-lg border border-border bg-card p-8">
+            <article key={name} className="glass-card rounded-lg p-8">
               <div className="flex items-center justify-between gap-4"><div className="flex gap-1 text-gold" aria-label={t("5 stars")}>★★★★★</div><BadgeCheck className="size-5 text-secondary" /></div>
               <MessageCircle className="mt-10 size-7 text-secondary" />
               <blockquote className="mt-5 font-serif text-3xl leading-snug text-ice">“{t(quote ?? "")}”</blockquote>
