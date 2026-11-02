@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, ArrowUpRight, BadgeCheck, Check, MessageCircle, ShieldCheck, Sparkles, Star } from "lucide-react";
 import { useState } from "react";
 import { useLang } from "@/lib/i18n";
-import { DOCTOR_IMAGE, FACADE_IMAGE } from "@/lib/images";
+import { DOCTOR_IMAGE, EXAM_IMAGE, FACADE_IMAGE } from "@/lib/images";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -55,7 +55,7 @@ function HomePage() {
       <div className="page-shell relative z-10 mt-14">
         <div className="relative mx-auto max-w-5xl">
           <div className="overflow-hidden rounded-[2.5rem] border border-border bg-panel shadow-2xl shadow-primary/15 sm:rounded-[5rem]">
-            <img src={DOCTOR_IMAGE} alt={t("Detailed eye examination")} width={1600} height={1050} className="h-[430px] w-full object-cover sm:h-[520px]" />
+            <img src={EXAM_IMAGE} alt={t("Detailed eye examination")} width={640} height={422} className="h-[430px] w-full object-cover sm:h-[520px]" />
           </div>
           <div className="float-soft glass-panel absolute -left-2 top-8 hidden rounded-full px-5 py-3 text-xs font-bold text-ice md:block"><ShieldCheck className="mr-2 inline size-4 text-secondary" />{t("Dr. Neeta Ramesh Patil · Eye Surgeon & Specialist")}</div>
           <div className="glass-panel absolute -bottom-8 right-0 max-w-xs rounded-lg p-5 text-left sm:right-5"><div className="flex gap-1 text-gold">★★★★★</div><p className="mt-2 text-sm leading-6 text-ice">{t("“Precise care, a painless experience, and exceptional clarity.”")}</p><p className="mt-2 text-xs text-muted-foreground">{t("Verified patient review")}</p></div>
@@ -89,7 +89,7 @@ function HomePage() {
     <section className="border-y border-border bg-panel py-28">
       <div className="page-shell"><p className="text-xs font-bold uppercase text-secondary">{t("Care that puts you first")}</p><h2 className="display-serif mt-4 max-w-3xl text-5xl text-ice sm:text-7xl">{t("Clinical excellence, built around you.")}</h2>
         <div className="mt-12 grid auto-rows-[190px] gap-4 md:grid-cols-3">
-          <div className="relative row-span-2 overflow-hidden rounded-lg border border-border"><img src={DOCTOR_IMAGE} loading="lazy" width={1600} height={1050} alt={t("Detailed eye examination")} className="size-full object-cover opacity-60" /><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background p-6 pt-20"><p className="text-xs font-bold uppercase text-secondary">{t("Clarity simulation")}</p><h3 className="mt-2 font-serif text-3xl text-ice">{t("From clouded to crystal clear.")}</h3></div></div>
+          <div className="relative row-span-2 overflow-hidden rounded-lg border border-border"><img src={EXAM_IMAGE} loading="lazy" width={640} height={422} alt={t("Detailed eye examination")} className="size-full object-cover opacity-60" /><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background p-6 pt-20"><p className="text-xs font-bold uppercase text-secondary">{t("Clarity simulation")}</p><h3 className="mt-2 font-serif text-3xl text-ice">{t("From clouded to crystal clear.")}</h3></div></div>
           <div className="glass-card rounded-lg p-6"><BadgeCheck className="size-6 text-secondary" /><h3 className="mt-6 font-serif text-2xl text-ice">{t("Seamless hospital experience")}</h3><p className="mt-2 text-sm text-muted-foreground">{t("Thoughtful OPD workflows with less waiting.")}</p></div>
           <div className="rounded-lg border border-border bg-primary p-6"><p className="display-serif text-5xl text-primary-foreground">10</p><p className="mt-3 text-sm font-bold text-primary-foreground">{t("Years of hospital service")}</p><p className="mt-1 text-xs text-primary-foreground/70">{t("16 years of doctor experience")}</p></div>
           <div className="glass-card rounded-lg p-6"><p className="display-serif text-5xl text-ice">99%</p><p className="mt-3 text-sm text-muted-foreground">{t("Patient satisfaction, built one conversation at a time.")}</p></div>

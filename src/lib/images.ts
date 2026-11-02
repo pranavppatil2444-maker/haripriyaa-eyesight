@@ -1,5 +1,11 @@
 // Single source for site imagery — these are the only photos used across the site.
-export const DOCTOR_IMAGE =
-  "https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kptunrdrxjgsqn5qgcpc";
-export const FACADE_IMAGE =
-  "https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/qdrkzmcxeibnftc1wrax";
+import doctorConsultation from "@/assets/doctor-consultation.jpg.asset.json";
+import doctorPortrait from "@/assets/doctor-portrait.jpg.asset.json";
+import hospitalFacade from "@/assets/hospital-facade.webp.asset.json";
+
+// Dr. Neeta Ramesh Patil seated at her desk (portrait).
+export const DOCTOR_IMAGE = doctorPortrait.url;
+// Doctor examining a patient in the consultation room.
+export const EXAM_IMAGE = doctorConsultation.url;
+// Haripriyaa Netralaya hospital facade.
+export const FACADE_IMAGE = hospitalFacade.url;

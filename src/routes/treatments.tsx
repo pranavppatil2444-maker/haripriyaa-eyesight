@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, Clock3, Stethoscope } from "lucide-react";
-import { DOCTOR_IMAGE } from "@/lib/images";
+import { EXAM_IMAGE } from "@/lib/images";
 import { PageHero } from "@/components/page-hero";
 import { useLang } from "@/lib/i18n";
 
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/treatments")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: DOCTOR_IMAGE }, { name: "twitter:image", content: DOCTOR_IMAGE },
+      { property: "og:image", content: EXAM_IMAGE }, { name: "twitter:image", content: EXAM_IMAGE },
     ],
   }),
   component: TreatmentsPage,
@@ -112,7 +112,7 @@ function TreatmentsPage() {
         eyebrow={t("Treatments & services")}
         title={t("Precision care for every stage of vision.")}
         description={t("Understand your symptoms, your options and your path to recovery with Dr. Neeta Ramesh Patil—without medical jargon.")}
-        image={DOCTOR_IMAGE}
+        image={EXAM_IMAGE}
       />
 
       <section className="py-24">
