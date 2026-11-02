@@ -24,7 +24,7 @@ export const Route = createFileRoute("/treatments")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: DOCTOR_IMAGE }, { name: "twitter:image", content: DOCTOR_IMAGE },
+      { property: "og:image", content: EXAM_IMAGE }, { name: "twitter:image", content: EXAM_IMAGE },
     ],
   }),
   component: TreatmentsPage,
