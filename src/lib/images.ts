@@ -4,8 +4,8 @@ import doctorPortrait from "@/assets/doctor-portrait.png";
 import hospitalFacade from "@/assets/hospital-facade.png";
 
 // Dr. Neeta Ramesh Patil seated at her desk (portrait).
-export const DOCTOR_IMAGE = doctorPortrait.url;
+export const DOCTOR_IMAGE = doctorPortrait;
 // Doctor examining a patient in the consultation room.
-export const EXAM_IMAGE = doctorConsultation.url;
+export const EXAM_IMAGE = doctorConsultation;
 // Haripriyaa Netralaya hospital facade.
-export const FACADE_IMAGE = hospitalFacade.url;
+export const FACADE_IMAGE = hospitalFacade;
