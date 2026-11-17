@@ -11,9 +11,6 @@
 
 ## Imagery
 
-- Site imagery is cloud-hosted via Lovable Assets (CDN): three pointers in
-  `src/assets/*.asset.json` (doctor portrait, doctor consultation, hospital
-  facade), surfaced through the constants in `src/lib/images.ts`
-  (`DOCTOR_IMAGE`, `EXAM_IMAGE`, `FACADE_IMAGE`). No binary photo files live
-  in the repo — the user asked for cloud-only imagery, so pages reference the
-  shared constants instead of importing files from `src/assets/`.
+- Site photos are PNG files in `src/assets/` and are imported through
+  `src/lib/images.ts` (`DOCTOR_IMAGE`, `EXAM_IMAGE`, `FACADE_IMAGE`). Pages
+  should use these shared constants rather than importing image files directly.
